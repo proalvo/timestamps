@@ -24,8 +24,8 @@ You can use Elgato Stream Deck, Bitfocus Companion and H2R Graphics to automate 
 - open https://localhost:8080/
 - In Bitfocus Companion, add a new connection. Use "Generic http" to create the connection.
   - Label: `Timestamp`
-  - Base URL: `http://127.0.0.1/api/`
-  - Target port:` 8080`
+  - Base URL: `http://127.0.0.1:8080/api/`
+ 
  ![alt text](https://github.com/proalvo/timestamps/blob/main/images/companion-http-connection.png?raw=true)
     
 - Add buttons for different parts of your show
