@@ -31,4 +31,4 @@ User interface is mainly to copy the timestamps - timestamps are created through
 
 ![alt text](https://github.com/proalvo/timestamps/blob/main/images/companion-press-action.png?raw=true)
 
-When you create a button in Companion, add a text you want to add to timestamp e.g. "Men's semifinals, heat 1". Only **start** is reserved keyword, you should use it when you start streaming. It sets timer to zero (0).
+When you create a button in Companion, add a text you want to add to timestamp e.g. "Men's semifinals, heat 1". Only "**start**" is reserved keyword, you should use it when you start streaming. It sets timer to zero (0).
