@@ -1,7 +1,7 @@
 # Timestamps
 **Generate timestamps for YouTube live streams while you are streaming. Once you finish your live stream, just copy & paste the timestamps to description of your YouTube video.**
 
-You can use Elgato Stream Deck, Bitfocus Companion and H2R Graphics to automate your workflow. For example, create lower third with H2R Graphics which name is e.g. "Men's semifinal, heat 1" (I have been using for sports events). Then you create a button in Companion which triggers the lower third and creation of the new timestamp. This way you create automagically timestamps for your stream.
+You can use Elgato Stream Deck, [Bitfocus Companion](https://bitfocus.io/companion) and [H2R Graphics](https://h2r.graphics/) to automate your workflow. For example, create lower third with H2R Graphics which name is e.g. "Men's semifinal, heat 1" (I have been using for sports events). Then you create a button in Companion which triggers the lower third and creation of the new timestamp. This way you create automagically timestamps for your stream.
 
 User interface is mainly to copy the timestamps - timestamps are created through API calls from Companion. API call is simply `http://127.0.0.1:8080/api/<your optional text>`. To reset the timer use `http://127.0.0.1:8080/api/start` or press START button in user interface.
 
@@ -36,4 +36,4 @@ User interface is mainly to copy the timestamps - timestamps are created through
 
 ![alt text](https://github.com/proalvo/timestamps/blob/main/images/companion-press-action.png?raw=true)
 
-When you create a button in Companion, add a text you want to add to timestamp e.g. "Men's semifinals, heat 1". Only "start" is reserved keyword, you should use it when you start streaming. It sets timer to zero (0).
+When you create a button in Companion, add a text you want to add to timestamp e.g. "Men's semifinals, heat 1". Only **start** is reserved keyword, you should use it when you start streaming. It sets timer to zero (0).
