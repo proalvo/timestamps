@@ -26,7 +26,7 @@ You can use Elgato Stream Deck, Bitfocus Companion and H2R Graphics to automate 
   - Label: `Timestamp`
   - Base URL: `http://127.0.0.1/api/`
   - Target port:` 8080`
- ![alt text](https://github.com/proalvo/timestamps/images/companion-http-connection.png?raw=true)
+ ![alt text](https://github.com/proalvo/timestamps/blob/main/images/companion-http-connection.png?raw=true)
     
 - Add buttons for different parts of your show
 
