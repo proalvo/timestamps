@@ -26,6 +26,8 @@ You can use Elgato Stream Deck, Bitfocus Companion and H2R Graphics to automate 
   - Label: `Timestamp`
   - Base URL: `http://127.0.0.1/api/`
   - Target port:` 8080`
+ ![alt text](https://github.com/proalvo/timestamps/images/companion-http-connection.png?raw=true)
+    
 - Add buttons for different parts of your show
 
 When you create a button in Companion, add a text you want to add to timestamp e.g. "Men's semifinals, heat 1". Only "start" is reserved keyword, you should use it when you start streaming. It sets timer to zero (0).
