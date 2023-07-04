@@ -3,6 +3,8 @@
 
 You can use Elgato Stream Deck, Bitfocus Companion and H2R Graphics to automate your workflow. For example, create lower third with H2R Graphics which name is e.g. "Men's semifinal, heat 1" (I have been using for sports events). Then you create a button in Companion which triggers the lower third and creation of the new timestamp. This way you create automagically timestamps for your stream.
 
+User interface is mainly to copy the timestamps - timestamps are created through API calls from Companion.
+
 ![User interface is very simple as content is created through the API](https://github.com/proalvo/timestamps/blob/main/images/timestamps.png)
 
 ## Pros
