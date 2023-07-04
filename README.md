@@ -1,7 +1,7 @@
 # Timestamps
 **Generate timestamps for YouTube live streams while you are streaming. Once you finish your live stream, just copy & paste the timestamps to description of your YouTube video.**
 
-You can use Elgato Stream Deck, [Bitfocus Companion](https://bitfocus.io/companion) and [H2R Graphics](https://h2r.graphics/) to automate your workflow. For example, create lower third with H2R Graphics which name is e.g. "Men's semifinal, heat 1" (I have been using for sports events). Then you create a button in Companion which triggers the lower third and creation of the new timestamp. This way you create automagically timestamps for your stream.
+You can use Elgato Stream Deck, [Bitfocus Companion](https://bitfocus.io/companion) and [H2R Graphics](https://h2r.graphics/) to automate your workflow. For example, create lower third with H2R Graphics which name is "Men's semifinal, heat 1". Then you create a button in Companion which triggers the lower third and creation of the new timestamp. This way you automagically create timestampsfor your stream.
 
 User interface is mainly to copy the timestamps - timestamps are created through API calls from Companion. API call is simply `http://127.0.0.1:8080/api/<your optional text>`. To reset the timer use `http://127.0.0.1:8080/api/start` or press START button in user interface.
 
@@ -12,11 +12,6 @@ User interface is mainly to copy the timestamps - timestamps are created through
 - Network based architecture so no need run Companion and Timestamps in the same computer.
 - Does not require much technical knowdledge
 - Supports multiple platforms (disclaimer: I have tested only on Windows 10)
-- Feel free to copy & improve the software
-
-## Cons
-- Need to understand how to setup your environment with Bitfocus Companion - but actually it is very simple.
-- Be careful to not to use the port which is already used by some other application.
 
 ## Installation and running the application
 - Download Node.js from https://nodejs.org/ and install it
