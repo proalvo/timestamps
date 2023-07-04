@@ -1,6 +1,5 @@
 # Timestamps
-Generate timestamps for YouTube live streams while you are streaming. Once you finish your live stream, just copy & paste the timestamps to description of your Youtube stream.
-This is the first and early version of the software, but seems to work very well.
+**Generate timestamps for YouTube live streams while you are streaming. Once you finish your live stream, just copy & paste the timestamps to description of your Youtube stream.**
 
 You can use Elgato Stream Deck, Bitfocus Companion and H2R Graphics to automate your workflow. For example, create lower third with H2R Graphics which name is e.g. "Men's semifinal, heat 1". Then you create a button in Companion, which triggers the lower third and creation of the new timestamp. This way you create automagically timestamps for your stream.
 
