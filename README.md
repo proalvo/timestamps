@@ -32,7 +32,7 @@ User interface is mainly to copy the timestamps - timestamps are created through
  
 ![alt text](https://github.com/proalvo/timestamps/blob/main/images/companion-http-connection.png?raw=true)
     
-- Add buttons for different sections of your show
+- Add buttons for different sections of your show. You can combine triggering of lower thirds from H2R Graphics and timestamps to the same button.
 
 ![alt text](https://github.com/proalvo/timestamps/blob/main/images/companion-press-action.png?raw=true)
 
