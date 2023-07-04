@@ -3,7 +3,7 @@
 
 You can use Elgato Stream Deck, Bitfocus Companion and H2R Graphics to automate your workflow. For example, create lower third with H2R Graphics which name is e.g. "Men's semifinal, heat 1" (I have been using for sports events). Then you create a button in Companion which triggers the lower third and creation of the new timestamp. This way you create automagically timestamps for your stream.
 
-User interface is mainly to copy the timestamps - timestamps are created through API calls from Companion.
+User interface is mainly to copy the timestamps - timestamps are created through API calls from Companion. API call is simply `http://127.0.0.1:8080/api/<your optional text>`. To reset the timer use `http://127.0.0.1:8080/api/start` or press START button in user interface.
 
 ![User interface is very simple as content is created through the API](https://github.com/proalvo/timestamps/blob/main/images/timestamps.png)
 
@@ -25,9 +25,9 @@ User interface is mainly to copy the timestamps - timestamps are created through
   
 ## Workflow
 - Start Node.js with command ```node timestamps.js```
-- open https://localhost:8080/
+- open `https://localhost:8080/`
 - In Bitfocus Companion, add a new connection. Use "Generic http" to create the connection.
-  - Label: `Timestamp`
+  - Label: `timestamps`
   - Base URL: `http://127.0.0.1:8080/api/`
  
 ![alt text](https://github.com/proalvo/timestamps/blob/main/images/companion-http-connection.png?raw=true)
