@@ -18,12 +18,12 @@ This is the first and early version of the software, but seems to work very well
 - Open a console and start the application with command "node timestamps.js"
   
 ## Workflow
-* Start Node.js with command ```node timestamps.js```
-* open https://localhost:8080/
-* In Bitfocus Companion, add a new connection. Use "Generic http" to create the connection.
-** Label: Timestamp
-** Base URL: 127.0.0.1/api/
-** Target port: 8080
-* Add buttons for different parts of your show
+- Start Node.js with command ```node timestamps.js```
+- open https://localhost:8080/
+- In Bitfocus Companion, add a new connection. Use "Generic http" to create the connection.
+  - Label: Timestamp
+  - Base URL: 127.0.0.1/api/
+  - Target port: 8080
+- Add buttons for different parts of your show
 
 When you create a button in Companion, add a text you want to add to timestamp e.g. "Men's semifinals, heat 1". Only "start" is reserved keyword, you should use it when you start streaming. It sets timer to zero (0).
