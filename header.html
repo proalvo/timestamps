@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<title>Timestamps for YouTube live streams</title>
+<head>
+	<link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAACXBIWXMAAABmAAAAZgEHbzbCAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAA/NJREFUWIXNmE9MHFUcxz9vZjFoGrWRDaXYpJUDB3H9c/CgJCiFLBA46MEgibEXDySGg9GQKPFiDDFqWqSNcMCYNMjFtUbFxYNtNmFjsmCjrFmUNMCCrVbaNC5dEWHn52GB7rDzdqc7m+g3ecm8+f15n/29eW/erMK7aoAOoAl4CKgF7gPWgavAT0AU+AK4VIbxtHoUCAFbgLhoFvDtDnhZdQAYBTIuQZzaJ8DBcsBUAz96AMltPwP3e4E5spOkHDC7bQmoKwWmEpgrM8xuiwN33i7QB4WS+v1+6evrk3A4LIlEQlZXV2VmZkZGRkaktbXVDdTp24F5kuwKyUuklJL+/n5JpVJSSNFoVBoaGoqtwMfcAn3tlKSiokJCoVBBkFylUilpa2srBPWpG5iHddUZHR11DbOr9fV1CQQCOqAMcKwY0NtOwU1NTY4DptNpCYfDMjExIXNzc44+sVhMlFI6qJeLAX3vFBiJRPIGCoVCUlVVZfMLBoOytraW59vR0aED+rIQzD1O01VdXS2ZTMY2QDQaFZ/P5zhIY2OjWJZl8x8bG9MB/VII6EGnoM7Ozrxf3N7eXnBZT01N2fzj8bjO96ZPLhy9F5+l9tM8/tLv9Zcub3P3XQamQcYwuAnwSP3BO9hYsW1kfyRneaDGt9dPXt0mY92yx2IxgsHgXr+mpkZXhC0fGV7EMk/tt8TO1OZ2TbJTCEzDd0/ZfGeHD5B952ZV+9wKV65n9vqVlZU2/3Q6rQNaNVTL8hBKvaLz8CqllK06ACsrKzr3Xw0A1bx4EnitfBC3rnt7ewkEAjZ7OBzWhU4be0mOL72H8FZ5gBR+v5/BwUGGh4dtts3NTcbHx3WhX/lye6pl6U05f8xEeN0L0Ewshv9IANM082xDQ0Mkk0mnsGUgbuy/q5qX3gD1jhegQ4eqHWEikQgDAwO6sHcByVvubiUX6hqwrLij8YlpqDxsuzU5OUlPTw+pVMop4jeyB7WNvAq5VsYqECt7V4lEgu7ubrq6unQwAK8CGwA+nUdRmWKQv58CcOrk+zcuzl87ODs7y/z8fLFMH5E99OMNyBIDnIE+PHP6z4XLW26+Kn4A+nJvlD5lhqmNVe6yxoAWwLZtlw5kSaFYq4AN4BzwNHB9v8FDhfRARvYA5qQrwAngWeAvJwcPz5Bp6AqhFLlAFtnp+Rg4qwPxDiRyDcXfZL/ZbKo77DubSP5zA1gALgJrbtOWvDECyPmjQUR9ngclql61LC6UkrP0ZwhQzcvfIPIMsOklT648AQGoluUpsOxQRumvJM9AAOp4MgzW82T/KwL1HwPtQJ1DqW5gi+3/ARCAal78DJEXMI1iG6NW/wJwCPmfTB+ZVgAAAABJRU5ErkJggg==">
+	
+	<style>
+        body { 
+            background-color: silver; 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        [class*="col-"] {
+            display:flex;
+            margin-left:0px;
+        }
+        .col-middle { 
+            width:60%;
+            background-color: white; 
+            padding:20px 10px 30px 40px;
+            min-height:600px;
+        }
+        button {
+            
+            border: none;
+            color: white;
+            padding: 10px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .button-normal {
+            background-color: #008CBA;;
+        }
+        .button-alert {
+            background-color: #f44336;
+        }
+        .header{
+            font-size: 34px;
+        }
+        .container {
+            width:100%;
+        }
+        .col-left {
+            float: left;
+            width:20%;
+        }
+        .col-right {
+            float: left;
+            width:20%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">    
+<div class="col-left">&nbsp;</div>
+<div class="col-middle">
+    <div>
+    <p class="header">Timestamps</p>
+	<form id="refresh" method="GET" action="/"></form>
+	<form id="reset" method="GET" action="/reset"></form>
+	<button form="refresh" class="button-normal" type="submit" title="Refresh the list of timestamps">REFRESH</button><button class="button-normal" id="button1" onclick="CopyToClipboard('timestamps')" title="Copy timestamps to clipboard">COPY</button>&nbsp;&nbsp;&nbsp;&nbsp;<button form="reset" class="button-alert" type="submit" title="Set time to 00:00 (clear the previous time stamps)">START</button>
+	
+    <P>Timestamps:</P>
+<!-- script to copy timestamps to clipboard -->
+<script>
+function CopyToClipboard(containerid) {
+  if (document.selection) {
+    var range = document.body.createTextRange();
+    range.moveToElementText(document.getElementById(containerid));
+    range.select().createTextRange();
+    document.execCommand("copy");
+  } else if (window.getSelection) {
+    var range = document.createRange();
+    range.selectNode(document.getElementById(containerid));
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    alert("Text has been copied")
+  }
+}
+</script>
+
+<pre id="timestamps">
