@@ -1,1 +1,0 @@
-This directory has data files ("database") for the timestamps application. Tis directory has only this readme file when you install the application. Files used by the timestamps application are created when you start it.
