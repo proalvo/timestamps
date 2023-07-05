@@ -37,12 +37,18 @@ User interface is mainly to copy the timestamps - timestamps are created through
  
 ![connecting companion to timestamps](https://github.com/proalvo/timestamps/blob/main/images/companion-http-connection.png)
     
-- Add buttons for different sections of your show. Input your own text to URI field. You can combine triggering of lower thirds from H2R Graphics and timestamps to the same button.
+- Add buttons for different sections of your show. Input your own text to URI field. 
 
 ![companion button settings](https://github.com/proalvo/timestamps/blob/main/images/companion-press-action.png)
 
-When you create a button in Companion, add a text you want to add to timestamp e.g. "Men's semifinals, heat 1". Only "**start**" is reserved keyword, you should use it when you start streaming. It sets timer to zero (0).
+You can combine triggering of lower thirds from H2R Graphics and timestamps to the same button.
+
+![combined action](https://github.com/proalvo/timestamps/blob/main/images/companion-press-action-h2r.png)
+
+When you create a button in Companion, add a text you want to add to timestamp e.g. "Men's semifinals, heat 1". Only "**start**" is reserved keyword, you should use it when you start streaming. It sets timer to zero.
+
 ![this is how looks on Stream Deck](https://github.com/proalvo/timestamps/blob/main/images/companion-buttons.png)
 
 This is how looks in H2R Graphics
+
 ![This is how looks in H2R Graphics](https://github.com/proalvo/timestamps/blob/main/images/h2r-graphics-lower-3rds.PNG)
