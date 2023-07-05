@@ -23,7 +23,7 @@ User interface is mainly to copy the timestamps - timestamps are created through
 - Install Node.js. Get suitable version from https://github.com/nodesource/distributions (select LTS version)
 - Get timestamps app with
   ```
-  git clone https://github.com/proalvo/timestamps.git`.
+  git clone https://github.com/proalvo/timestamps.git
   cd timestamps
   node timestamps.js
   ```
