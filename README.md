@@ -31,11 +31,11 @@ User interface is mainly to copy the timestamps - timestamps are created through
 - open `https://127.0.0.1:8080/`
 - In Bitfocus Companion, add a new connection. Use "Generic http" to create the connection.
   - Label: `timestamps`
-  - Base URL: `http://127.0.0.1:8080/api/`
+  - Base URL: `http://127.0.0.1:8080/api/` 
  
 ![alt text](https://github.com/proalvo/timestamps/blob/main/images/companion-http-connection.png?raw=true)
     
-- Add buttons for different sections of your show. You can combine triggering of lower thirds from H2R Graphics and timestamps to the same button.
+- Add buttons for different sections of your show. Input your own text to URI field. You can combine triggering of lower thirds from H2R Graphics and timestamps to the same button.
 
 ![alt text](https://github.com/proalvo/timestamps/blob/main/images/companion-press-action.png?raw=true)
 
