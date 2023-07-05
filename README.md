@@ -11,15 +11,14 @@ User interface is mainly to copy the timestamps - timestamps are created through
 
 ## Pros
 - Very lightweight application
-- Network based architecture so no need run Companion and Timestamps in the same computer. **timestamps.js** has IP address 127.0.0.1 by default so you can run the app only on local computer. Change the IP address to your computer's IP address if you want to use it over the network.
-- Does not require much technical knowdledge
-- Supports multiple platforms 
+- Network based architecture so no need run to Companion and Timestamps in the same computer. **timestamps.js** has IP address 127.0.0.1 by default so you can run the app only on local computer. Change the IP address to your computer's IP address if you want to use it over the network.
+- Supports multiple platforms - any platform supported by node.js.
 
 ## Installation and running the application
 
 ### Windows
-- Download Node.js from https://nodejs.org/ and install it
-- Download timestamps-main.zip from Github (you find from under the 'Code') and extract files to Documents directory. Just for simplicity, rename timestamps-main to timestamps.
+- Download Node.js from https://nodejs.org/ and install it.
+- Download _timestamps-main.zip_ from Github (you find it under the _'Code'_-button) and extract files to your Documents directory. Just for simplicity, rename _timestamps-main_ directory to _timestamps_.
 - Open command prompt, input `cd timestamps` and start the application with command `node timestamps.js`
 ### Linux (e.g. Raspberry Pi)
 - Install Node.js. Get suitable version from https://github.com/nodesource/distributions (select LTS version)
@@ -30,7 +29,7 @@ User interface is mainly to copy the timestamps - timestamps are created through
   node timestamps.js
   ```
 ### Continue setting up the timestamps app  
-- open `https://127.0.0.1:8080/`
+- Open `https://127.0.0.1:8080/`. 
 - In Bitfocus Companion, add a new connection. Use "Generic http" to create the connection.
   - Label: `timestamps`
   - Base URL: `http://127.0.0.1:8080/api/` 
