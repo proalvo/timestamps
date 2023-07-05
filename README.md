@@ -9,18 +9,26 @@ User interface is mainly to copy the timestamps - timestamps are created through
 
 ## Pros
 - Very lightweight application
-- Network based architecture so no need run Companion and Timestamps in the same computer.
+- Network based architecture so no need run Companion and Timestamps in the same computer. **timestamps.js** has IP address 127.0.0.1 by default so you can run the app only on local computer. Change the IP address to your computer's IP address if you want to use it over the network.
 - Does not require much technical knowdledge
-- Supports multiple platforms (disclaimer: I have tested only on Windows 10)
+- Supports multiple platforms 
 
 ## Installation and running the application
+
+### Windows
 - Download Node.js from https://nodejs.org/ and install it
 - Download timestamps.zip from here and extract files to any directory you wish
-- Open a console and start the application with command "node timestamps.js"
-  
-## Workflow
 - Start Node.js with command ```node timestamps.js```
-- open `https://localhost:8080/`
+### Linux (eg. Raspberry Pi)
+- Install Node.js. Get suitable version from https://github.com/nodesource/distributions (select LTS version)
+- Get timestamps app with
+  ```
+  git clone https://github.com/proalvo/timestamps.git`.
+  cd timestamps
+  node timestamps.js
+  ```
+### Continue setting up the timestamps app  
+- open `https://127.0.0.1:8080/`
 - In Bitfocus Companion, add a new connection. Use "Generic http" to create the connection.
   - Label: `timestamps`
   - Base URL: `http://127.0.0.1:8080/api/`
