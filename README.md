@@ -19,8 +19,8 @@ User interface is mainly to copy the timestamps - timestamps are created through
 
 ### Windows
 - Download Node.js from https://nodejs.org/ and install it
-- Download timestamps.zip from here and extract files to any directory you wish
-- Start Node.js with command ```node timestamps.js```
+- Download timestamps-main.zip from here (you find from under the 'Code') and extract files to Documents directory. Just for simplicity, rename timestamps-main to timestamps.
+- Open command prompt, input `cd timestamps` and start the application with command `node timestamps.js`
 ### Linux (e.g. Raspberry Pi)
 - Install Node.js. Get suitable version from https://github.com/nodesource/distributions (select LTS version)
 - Get timestamps app with
