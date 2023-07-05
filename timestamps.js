@@ -1,17 +1,21 @@
+/*************************************************************/
+// change hostname to your computer's IP address if you want to use the app over the network
+const hostname = '127.0.0.1'; 
+const port = 8080;
+/*************************************************************/
+
 var http = require('http');
 var fs = require('fs');
 var url = require('url');
-
-const hostname = '127.0.0.1';
-const port = 8080;
 
 var datetime = new Date();
 var time = datetime.getTime();
 
 // Save start time of the app. This reference time for timestamps. 
-fs.writeFile("starttime.txt", String(time),{ flag: 'w+' }, err => {});
+fs.writeFile('./data/starttime.txt', String(time),{ flag: 'w+' }, err => {});
+
 // Write start time logfile also in human readable format
-fs.writeFile("log.txt", 'Start time '+myDateTime(datetime)+' (app started)\n',{ flag: 'a+' }, err => {});
+fs.writeFile('./data/log.txt', 'Start time '+myDateTime(datetime)+' (app started)\n',{ flag: 'a+' }, err => {});
 
 // start the web server
 http.createServer(function (request, res) {
@@ -21,7 +25,7 @@ http.createServer(function (request, res) {
 	// show index.html  
 	if ( pathname == "/" ) {
 		showPage(res);		
-	}
+	} else
 	
 	// api interface
 	if ( pathname.substring(1,4) == "api" ) {
@@ -33,16 +37,16 @@ http.createServer(function (request, res) {
 			addTimeStamp(res, pathname);
 		}
 		
-	}
+	} else
 	
 	if ( pathname == "/reset" ) {
 		resetTime();
 		res.writeHead(303, {'Location': '/'}); 
 		res.end();
 			
-	}
+	} else
   
-	// browsers are looking for favicon.ico - this is just to respond that it does not exist (it is actually in header.html as base64 encoded image).
+	// browsers are looking for favicon.ico - this is just to respond that it does not exist (it is actually in ./html/header.html as base64 encoded image).
 	if (pathname=="/favicon.ico") {
 		res.writeHead(204); 
 		res.end();
@@ -62,13 +66,20 @@ http.createServer(function (request, res) {
 function showPage(res) {
 	res.writeHead(200, {'Content-Type': 'text/html; charset=UTF-8'}); 
 
-	var html = fs.readFileSync('header.html', { encoding: 'utf8', flag: 'r' });
+	var html = fs.readFileSync('./html/header.html', { encoding: 'utf8', flag: 'r' });
 	res.write(html); 
 	
-	html = fs.readFileSync('log.txt', { encoding: 'utf8', flag: 'r' });
+	html = fs.readFileSync('./data/log.txt', { encoding: 'utf8', flag: 'r' }, (err)=> {
+		if (err) {
+			console.log('Error on line 76');
+			console.error(err);
+			return;
+		}	
+	}
+	);
 	res.write(html); 
 
-	html = fs.readFileSync('footer.html', { encoding: 'utf8', flag: 'r' });
+	html = fs.readFileSync('./html/footer.html', { encoding: 'utf8', flag: 'r' });
 	res.write(html); 
 	
 	res.end();			
@@ -81,16 +92,17 @@ function resetTime() {
 	datetime = new Date();
 	currenttime = datetime.getTime();
 	
-	fs.writeFile("starttime.txt", String(currenttime), (err) => {
+	fs.writeFile('./data/starttime.txt', String(currenttime), (err) => {
 		if (err) {
 			res.writeHead(500, {'Content-Type': 'text/html; charset=UTF-8'});
+			console.log('Error at line 89');
 			console.error(err);
 			return;
 		}
 		
 	});			
 	
-	fs.writeFile("log.txt", 'Start time '+myDateTime(datetime)+'\n',{ encoding: "utf8"}, (err) => {
+	fs.writeFile('./data/log.txt', 'Start time '+myDateTime(datetime)+'\n',{ encoding: "utf8"}, (err) => {
 		if (err) {
 			res.writeHead(500, {'Content-Type': 'text/html; charset=UTF-8'});
 			console.error(err);
@@ -109,10 +121,11 @@ function addTimeStamp(res, pathname) {
 	datetime = new Date();
 	currenttime = datetime.getTime();
 	
-	fs.readFile('starttime.txt', 'utf8', function(error, starttime) {
-		if (error) {
+	fs.readFile('./data/starttime.txt', 'utf8', function(err, starttime) {
+		if (err) {
 			res.writeHead(500, {'Content-Type': 'text/html; charset=UTF-8'});
-			console.error(error);
+			console.log('Error at line 119');
+			console.error(err);
 			return;
 		}
 		// convert epoch time to timestamp
@@ -152,14 +165,20 @@ function addTimeStamp(res, pathname) {
 		else {
 			data = data+' Chapter';	
 		}
-		fs.writeFile("log.txt", data +'\n',{ flag: 'a+' }, err => {});
-		
-		res.writeHead(200, {'Content-Type': 'text/html; charset=UTF-8'});
 
+		fs.writeFile('./data/log.txt', data +'\n',{ flag: 'a+' }, function(err) {
+			if (err) {
+				res.writeHead(500, {'Content-Type': 'text/html; charset=UTF-8'});
+				console.error(err);
+				return;
+			} 
+		});
+		
+		res.writeHead(200, {'Content-Type': 'text/plain; charset=UTF-8'});
+		res.write('200 OK');
+		res.end();
 	});		
-		
-	res.end();
-		
+			
 	return;
 
 }
