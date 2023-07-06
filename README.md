@@ -20,6 +20,8 @@ User interface is mainly to copy the timestamps - timestamps are created through
 - Download Node.js from https://nodejs.org/ and install it.
 - Download _timestamps-main.zip_ from Github (you find it under the _'Code'_-button) and extract files to your Documents directory. Just for simplicity, rename _timestamps-main_ directory to _timestamps_.
 - Open command prompt, input `cd timestamps` and start the application with command `node timestamps.js`
+
+To update fom older version to new, just delete old _timestamps_ installation (no need to delete node.js) and install again.
 ### Linux (e.g. Raspberry Pi)
 - Install Node.js. Get suitable version from https://github.com/nodesource/distributions (select LTS version)
 - Get timestamps app with
@@ -28,6 +30,8 @@ User interface is mainly to copy the timestamps - timestamps are created through
   cd timestamps
   node timestamps.js
   ```
+To update fom older version to new, just delete old _timestamps_ installation with `cd && rm -r timestamps` and clone the software again. 
+
 ### Continue setting up the timestamps app  
 - Open `https://127.0.0.1:8080/`. 
 - In Bitfocus Companion, add a new connection. Use "Generic http" to create the connection.
